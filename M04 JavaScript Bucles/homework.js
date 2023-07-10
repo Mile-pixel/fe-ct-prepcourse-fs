@@ -57,11 +57,11 @@ function saludo(idioma) {
    else if (idioma == "mandarin"){
       return "Ni Hao!"
    }
-   else if (idoma == "ingles")
+   else if (idioma == "ingles")
    {
       return "Hello!"
    }
-   else {
+   else if (idioma != "ingles" || idioma != "mandarin" || idioma !="aleman"){
       return "Hola!"
    }
 }
@@ -82,12 +82,24 @@ function esDiezOCinco(num) {
    // Retornar true si "num" es 10 o 5.
    // De lo contrario, retornar false.
    // Tu código:
+   if (num == 10 || num == 5){
+      return true
+   }
+   else {
+      return false
+   }
 }
 
 function estaEnRango(num) {
    // Retornar true si "num" es menor que 50 y mayor que 20.
    // De lo contrario, retornar false.
    // Tu código:
+   if (num > 20 && num <50 ) {
+      return true
+   }
+   else {
+      return false
+   }
 }
 
 function esEntero(num) {
@@ -97,6 +109,7 @@ function esEntero(num) {
    // Ejemplo: (-10) ---> true
    // De lo contrario, retorna false.
    // Tu código:
+
 }
 
 function fizzBuzz(num) {
@@ -105,6 +118,18 @@ function fizzBuzz(num) {
    // Si "num" es divisible entre 3 y 5 (ambos), retorna "fizzbuzz".
    // De lo contrario, retorna false.
    // Tu código:
+   if ((num%3 == 0) && (num%5 == 0)) {
+      return "fizzbuzz"
+   }
+   else if ((num % 3 == 0) ) {
+      return "fizz"
+   }
+   else if ((num%5) == 0){
+      return "buzz"
+   }
+   else {
+      return false
+   }
 }
 
 function operadoresLogicos(num1, num2, num3) {
@@ -124,12 +149,21 @@ function esPrimo(num) {
    // [Pista 2]: puedes resolverlo utilizando un `bucle for`.
    // [Nota]: los números negativos, 0 y 1 NO son números primos.
    // Tu código:
+   
+   
 }
 
 function esVerdadero(valor) {
    // Si "valor" es verdadero retornar "Soy verdadero".
    // Caso contrario, retornar "Soy falso".
    // Tu código:
+   if (valor == true){
+      return "Soy verdadero"
+   }
+   else {
+      return "soy falso"
+   }
+
 }
 
 function tieneTresDigitos(num) {
@@ -144,7 +178,9 @@ function doWhile(num) {
    // Utilizar el bucle Do-While.
    // Tu código:
 }
-
+console.log(esDiezOCinco(15))
+console.log(estaEnRango(23))
+console.log(fizzBuzz(27))
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
 module.exports = {
    obtenerMayor,
