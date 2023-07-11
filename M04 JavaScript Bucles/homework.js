@@ -75,6 +75,23 @@ function colors(color) {
    // Si no es ninguno de esos colores           --> "Color not found".
    // IMPORTANTE: utilizar el statement SWITCH.
    // Tu código:
+   switch (color) {
+      case 'blue':
+        return 'This is blue';
+        break;
+      case 'red':
+        return 'This is red';
+        break;
+      case 'green':
+        return 'This is green';
+        break;
+      case 'orange':
+        return 'This is orange';
+        break;
+
+      default:
+        return 'Color not found';
+    }
    
 }
 
@@ -109,7 +126,12 @@ function esEntero(num) {
    // Ejemplo: (-10) ---> true
    // De lo contrario, retorna false.
    // Tu código:
-
+   if (Number.isInteger(num)) {
+      return true;
+   }
+   else{
+      return false;
+   }
 }
 
 function fizzBuzz(num) {
@@ -140,6 +162,22 @@ function operadoresLogicos(num1, num2, num3) {
    // Si todos los argumentos son cero, retornar ---> "Error".
    // Si no se cumple ninguna de las condiciones anteriores, retornar false.
    // Tu código:
+   if (num1>num2 && num1>num3 && num1>0) {
+      return "Numero 1 es mayor y positivo";
+   }
+   else if (num1<0 || num2<0 || num3<0) {
+      return "Hay negativos";
+   }
+   else if (num3>num1 && num3>num2){
+      num3++;
+      return num3;
+   }
+   else if (num1 == 0 && num2 == 0 && num3 == 0){
+      return "Error"
+   }
+   else{
+      return false
+   }
 }
 
 function esPrimo(num) {
@@ -148,7 +186,18 @@ function esPrimo(num) {
    // [Pista 1]: un número primo sólo es divisible por sí mismo y por 1.
    // [Pista 2]: puedes resolverlo utilizando un `bucle for`.
    // [Nota]: los números negativos, 0 y 1 NO son números primos.
-   // Tu código:
+   // Tu código: 
+   if (num <= 1) {
+      return false
+   }
+   for (let index = 2; index < num; index++) {
+      if (num % index === 0) {
+         return false
+      }
+      else{
+        return true
+      }
+   }
    
    
 }
@@ -161,7 +210,7 @@ function esVerdadero(valor) {
       return "Soy verdadero"
    }
    else {
-      return "soy falso"
+      return "Soy falso"
    }
 
 }
@@ -170,6 +219,12 @@ function tieneTresDigitos(num) {
    // Si el número recibido tiene tres dígitos retornar true.
    // Caso contrario, retornar false.
    // Tu código:
+   if (num.length === 3) {
+      return true
+   }
+   else{
+      return false
+   }
 }
 
 function doWhile(num) {
@@ -177,10 +232,19 @@ function doWhile(num) {
    // Retornar el valor final.
    // Utilizar el bucle Do-While.
    // Tu código:
+   limite = 8;
+   acumlado = 0;
+   do{
+      num = num + 5;
+      acumlado++;
+   }while(acumlado < limite);
+   return num;
+   
 }
 console.log(esDiezOCinco(15))
 console.log(estaEnRango(23))
 console.log(fizzBuzz(27))
+console.log(esPrimo(4))
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
 module.exports = {
    obtenerMayor,

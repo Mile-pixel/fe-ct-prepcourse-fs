@@ -3,9 +3,9 @@
 function devolverPrimerElemento(array) {
    // Retornar el primer elemento del arreglo recibido por parámetro.
    // Tu código:
-   for (let i = 0; i < array.length; i++) {
-      const element = array[i];
-   }
+   primerposicion = array[0];
+   
+   return primerposicion;
 }
 
 function devolverUltimoElemento(array) {
